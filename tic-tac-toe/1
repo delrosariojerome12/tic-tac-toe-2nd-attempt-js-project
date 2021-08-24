@@ -1,0 +1,61 @@
+
+// first method nodelist to array
+// const aiChoiceArray = Array.from(computerListChoice);
+// console.log(aiChoiceArray);
+
+// second method nodelist to array
+// const secondArray = Array.prototype.slice.call(computerListChoice);
+// console.log(secondArray);
+
+
+
+      //   arrayGiven[index][j].style.background =
+      //     "url(img/circle-brush.png) no-repeat";
+      //   arrayGiven[index][j].style.backgroundSize = "contain";
+      //   arrayGiven[index][j].style.backgroundPosition = "center";
+      //   arrayGiven[index][j].style.pointerEvents = "none";
+      //   arrayGiven[index].splice(j, 1);
+
+
+
+       if (
+        arrayGiven[group][individual].className ===
+          arrayGiven[index][j].className &&
+        ctr < 5
+      ) {
+        ctr++;
+        console.log(arrayGiven[index][j]);
+        console.log(arrayGiven[group][individual]);
+        console.log(group + " " + individual + " CTR: " + ctr);
+        arrayGiven[index][j].style.background =
+          "url(img/circle-brush.png) no-repeat";
+        arrayGiven[index][j].style.backgroundSize = "contain";
+        arrayGiven[index][j].style.backgroundPosition = "center";
+        arrayGiven[index][j].style.pointerEvents = "none";
+        arrayGiven[index].splice(j, 1);
+      } else {
+        console.log("testing");
+      }
+    }
+
+
+
+    function checking(array, part) {
+  for (let index = 0; index < array.length; index++) {
+    if (array.length === 3 && array[index] === "user" && part === "Row One" || part === "Column One") {
+      rowOneScore++;
+      if (userScore === 3) {
+        console.log(userScore);
+        console.log("Player Win!");
+        // boxCon.innerHTML += `<div class='message-box'> You Win!<button onclick='refresh()'>Reset</button> </div>`;
+      }
+    } else if (array.length === 3 && array[index] === "AI") {
+      aiScore++;
+      if (aiScore === 3) {
+        console.log(aiScore);
+        console.log("Computer Win!");
+        // boxCon.innerHTML += `<div class='message-box'> You Lose!<button onclick='refresh()'>Reset</button> </div>`;
+      }
+    }
+  }
+}
